@@ -1,2 +1,2 @@
 # unifiedapi
-Unified API Framework for Cloud Storage, Banalore Team
+Unified API Framework for Cloud Storage, Bangalore Team
