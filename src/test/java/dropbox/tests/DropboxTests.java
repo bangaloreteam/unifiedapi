@@ -66,7 +66,7 @@ public class DropboxTests {
 		   System.out.println("statusCode"+response.getStatusCode());
 		
 	  }
-	  @Test
+	
 	  public void downloadFile() throws Exception{
 	
 		  testFile= new java.io.File(System.getProperty("user.dir") + "\\src\\test\\resources\\gitcommands.txt");
@@ -80,7 +80,8 @@ public class DropboxTests {
 						headers, true); 
 				String respAsString = response.getHeader("x-dropbox-metadata");
 				System.out.println("test.."+respAsString);
-	  }	  
+	  }	
+	  
 	  
 	 
 		private static byte[] fileToByteArray(java.io.File file) {
@@ -97,6 +98,89 @@ public class DropboxTests {
 			}
 			return byteArrayFile;
 		}
+		
+	 public void getDropBoxAccounts() throws Exception
+	  {
+		  HashMap<String, String> queryParams=new HashMap<String,  String>();
+			queryParams.put("access_token", dropboxAccessToken);
+			HashMap<String, String> headers =new HashMap<String,  String>();
+			headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+
+			//invoke the httpcore post api
+			Response response = dropboxApi.doGet(DropboxConstants.API_DROPBOX_ACCOUNT_INFO,  
+					queryParams,
+					headers, true); 
+		//AccountInfo accountInfo=response.as(AccountInfo.class);
+			System.out.println("finished dropboxaccounts info"+response);
+		  
+	  }
+	  
+	  public void getMetaData() throws Exception
+	  {
+		 		  
+		  testFile= new java.io.File(System.getProperty("user.dir") + "\\src\\test\\resources\\Sample.txt");
+		   HashMap<String, String> queryParams=new HashMap<String,  String>();
+			queryParams.put("access_token", dropboxAccessToken);
+			HashMap<String, String> headers =new HashMap<String,  String>();
+			headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+			
+			Response response = dropboxApi.doGet(DropboxConstants.API_DROPBOX_GET_FILE_BY_PATH.replace("<path>", testFile.getName()),  
+					queryParams,
+					headers, true); 
+			System.out.println("response code:"+response.getStatusCode());
+		  
+	  }
+	
+	  public void getDelta() throws Exception
+	  {
+		
+		HashMap<String, String> queryParams=new HashMap<String,  String>();
+		queryParams.put("access_token", dropboxAccessToken);
+		HashMap<String, String> headers =new HashMap<String,  String>();
+		headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+		
+		Response response = dropboxApi.doGet(DropboxConstants.API_DROPBOX_DELTA,  
+				queryParams,
+				headers, true); 
+		System.out.println("response code:"+response.getStatusCode());
+		
+	  }
+	  public void createFolder() throws Exception
+	  {
+		  String requestBody = "{\"name\":\"TestData\", \"folder\":{}, \"@name.conflictBehavior\":\"rename\"}";
+			HashMap<String, String> queryParams=new HashMap<String,  String>();
+				queryParams.put("access_token", dropboxAccessToken);
+				queryParams.put("root", "auto");
+				queryParams.put("path", "home");
+				HashMap<String, String> headers =new HashMap<String,  String>();
+				headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+				
+				//invoke the httpcore post api
+				Response response = dropboxApi.doPost(DropboxConstants.API_DROPBOX_FOLDER_CREATE,  requestBody,
+						queryParams,
+						headers, true); 
+				String folder=response.asString();
+				System.out.println("Folder Details:" + folder);
+	
+	  }
+	  public void fileCopyReference() throws Exception
+	  {
+		  testFile= new java.io.File(System.getProperty("user.dir") + "\\src\\test\\resources\\Sample.txt");
+		 
+		  HashMap<String, String> queryParams=new HashMap<String,  String>();
+			queryParams.put("access_token", dropboxAccessToken);
+			HashMap<String, String> headers =new HashMap<String,  String>();
+			headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+			
+			Response response = dropboxApi.doGet(DropboxConstants.API_DROPBOX_COPY_REF.replace("<path>", testFile.getName()), 
+					queryParams,
+					headers, true); 
+			String fileReference=response.asString();
+			System.out.println("response code:"+response.getStatusCode()+"strRespon::"+fileReference);
+		  
+		  
+	  }
+	  	
 		
 
   
