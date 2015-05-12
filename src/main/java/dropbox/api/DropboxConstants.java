@@ -4,15 +4,14 @@ public interface DropboxConstants {
 	
 
 	 //DROPBOX authentication constants
-		public static final String DROPBOX_APP_KEY="";
-		public static final String DROPBOX_APP_SECRET="";
+		public static final String DROPBOX_APP_KEY="drivebox.app.key";
+		public static final String DROPBOX_APP_SECRET="drivebox.app.secret";
 		public static final String DROPBOX_APP_AUTHORIZATION_URL="";
 		public static final String DROPBOX_APP_AUTHORIZATION_CODE="";
-		public static final String DROPBOX_APP_ACCESSTOKEN="access_token";
+		public static final String DROPBOX_APP_ACCESSTOKEN="drivebox.accessToken";
 		public static final String DROPBOX_APP_TEST_FILE="";
 		public static final String DROPBOX_APP_USER_DIR="user.dir";
 		
-	 	
 		
 	//drive box root uri	
 		public static final String DROPBOX_URL_ROOT = "https://www.dropbox.com/1";	
