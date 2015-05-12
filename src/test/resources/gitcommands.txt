@@ -1,0 +1,11 @@
+git status
+d:>git clone <location>
+git add --all
+git status
+git commit -m "modified message"
+git push
+
+-get all existing branches:
+git branch
+
+https://help.github.com/articles/adding-a-remote/
