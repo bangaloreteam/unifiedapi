@@ -1,0 +1,382 @@
+{
+    "id": "9a07c9f5-0737-44c6-9cad-a3a153bc84f4",
+    "templateId": "5b1afe30-807c-4966-a9de-aecd1bb7e646",
+    "originatorId": "9a07c9f5-0737-44c6-9cad-a3a153bc84f4",
+    "name": "Week5Eighteen",
+    "contextId": "CUR/600_1414162087210",
+    "parentPath": null,
+    "version": "1414162088336",
+    "objectType": "AssessmentActivity",
+    "creationType": null,
+    "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft",
+    "title": "Final Exam",
+    "description": "Final exam paper an example fo QuizActivity",
+    "status": "ACTIVE",
+    "provisionStatus": "PROVISIONING_FAILED",
+    "template": null,
+    "editable": null,
+    "required": true,
+    "creationDate": "2014-10-24T14:48:07.210Z",
+    "modificationDate": "2014-10-24T14:48:08.336Z",
+    "createdBy": "33b5a0ac-fb20-401f-a3c8-82f7cd2f271c",
+    "modifiedBy": "ProvisioningKey",
+    "dates": [
+        {
+            "id": "c69ce92a-a5ec-4059-b8c8-61de4beade33",
+            "type": "OFFSET",
+            "name": "publishStartDate",
+            "value": "5"
+        },
+        {
+            "id": "7e7a593f-5109-42e2-9f6c-20cfc220e17f",
+            "type": "OFFSET",
+            "name": "publishEndDate",
+            "value": "5"
+        },
+        {
+            "id": "34e96aa9-76e7-47f8-8b9b-86d0333a323f",
+            "type": "OFFSET",
+            "name": "dueDate",
+            "value": "0"
+        }
+    ],
+    "displayParam": null,
+    "reference": null,
+    "points": 15,
+    "weight": null,
+    "activityType": "CDG_DRAFT",
+    "assessmentType": "SUMMATIVE",
+    "kind": "INDIVIDUAL",
+    "policy": {
+        "id": "cd70c565-bf28-4783-acb0-d968b410fbc9",
+        "scope": "Local",
+        "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft",
+        "roles": [
+            {
+                "id": "d9ecaedd-d1b3-420e-9d2f-72e8aa57420a",
+                "groupId": "IDD",
+                "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:roles:d9ecaedd-d1b3-420e-9d2f-72e8aa57420a",
+                "rights": [
+                    {
+                        "id": "aea9f282-f6a5-483d-a656-d4e2e913ae02",
+                        "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:roles:d9ecaedd-d1b3-420e-9d2f-72e8aa57420a/urn:apol:rights:aea9f282-f6a5-483d-a656-d4e2e913ae02",
+                        "applyTo": "/",
+                        "actions": [
+                            {
+                                "id": "dc57636e-664c-4daf-8ae1-a2d898ee6f44",
+                                "name": "CREATE",
+                                "value": "true"
+                            },
+                            {
+                                "id": "b2ffaae8-585e-4624-9051-648c46058e49",
+                                "name": "READ",
+                                "value": "true"
+                            },
+                            {
+                                "id": "a80c8565-db73-4970-8668-77a27ac3f7ca",
+                                "name": "UPDATE",
+                                "value": "true"
+                            },
+                            {
+                                "id": "527676de-3dfc-48d0-81db-e1f7801ee47e",
+                                "name": "DELETE",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "a22c3c54-929b-4470-b45c-0e393ab4baab",
+                "groupId": "IN",
+                "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:roles:a22c3c54-929b-4470-b45c-0e393ab4baab",
+                "rights": [
+                    {
+                        "id": "ced949ab-ce9d-4904-b725-b37a956fae97",
+                        "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:roles:a22c3c54-929b-4470-b45c-0e393ab4baab/urn:apol:rights:ced949ab-ce9d-4904-b725-b37a956fae97",
+                        "applyTo": "/",
+                        "actions": [
+                            {
+                                "id": "91b5a2f7-c449-4e79-a94c-31c062fe7ddc",
+                                "name": "CREATE",
+                                "value": "true"
+                            },
+                            {
+                                "id": "99468f4f-b3f7-404d-b790-7d6d4c23d9f2",
+                                "name": "READ",
+                                "value": "true"
+                            },
+                            {
+                                "id": "a32fdb1a-e1e1-443d-ae9b-3b9b91f8e74d",
+                                "name": "UPDATE",
+                                "value": "true"
+                            },
+                            {
+                                "id": "fc34cc21-28e9-4c8e-ae0e-0b0efbbc6cee",
+                                "name": "DELETE",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "850b69c4-02af-4201-a036-f869d6091f41",
+                "groupId": "ST",
+                "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:roles:850b69c4-02af-4201-a036-f869d6091f41",
+                "rights": [
+                    {
+                        "id": "e331cbc9-9d94-40fe-85e5-01134a51a88d",
+                        "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:roles:850b69c4-02af-4201-a036-f869d6091f41/urn:apol:rights:e331cbc9-9d94-40fe-85e5-01134a51a88d",
+                        "applyTo": "/",
+                        "actions": [
+                            {
+                                "id": "1525d8ca-6375-473a-8b44-95fb32777478",
+                                "name": "READ",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "4e6aa24a-8176-4c5f-a22e-0c2d809360e1",
+                "groupId": "AD",
+                "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:roles:4e6aa24a-8176-4c5f-a22e-0c2d809360e1",
+                "rights": [
+                    {
+                        "id": "c3f4f08c-ca6f-4b62-9ab4-2372d1e6ca3a",
+                        "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:roles:4e6aa24a-8176-4c5f-a22e-0c2d809360e1/urn:apol:rights:c3f4f08c-ca6f-4b62-9ab4-2372d1e6ca3a",
+                        "applyTo": "/",
+                        "actions": [
+                            {
+                                "id": "64ad6c7c-773b-4999-8419-f8bc84419296",
+                                "name": "READ",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "resourceInfo": {
+        "id": "c2c883ad-710c-44fc-8bab-a337dfa73fcc",
+        "resourceParam": {
+            "id": "800e6c26-2508-4996-b7db-4f248b84319c",
+            "templateInfo": {
+                "id": "7e460606-82a2-48f5-ae22-1ba63f3193fb",
+                "value": [
+                    {
+                        "id": "b839cbaf-35ea-4a96-b04b-db36ba3199c7",
+                        "name": "type",
+                        "value": "application/x-apollogrp-quiz"
+                    },
+                    {
+                        "id": "82ed8617-ff28-4b55-96bc-f3a3af209c1e",
+                        "name": "testFormationType",
+                        "value": "ObjectiveTagged"
+                    },
+                    {
+                        "id": "13dafd4e-7e13-49c9-992d-65a253de9ad6",
+                        "name": "questionSetParams",
+                        "value": "[{\"questionSetId\":\"GCID-9bcd6515ec57-7aba-7004-7dc5-89eec717\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective9\"},{\"questionSetId\":\"GCID-e7baae77a3cd-dbaa-3c44-61b3-024fb267\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective8\"},{\"questionSetId\":\"GCID-cafa94301ca8-275a-31f4-abab-bda893e1\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective7\"},{\"questionSetId\":\"GCID-0fa66efba3ba-fe7a-a974-a5d8-e621f752\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective10\"},{\"questionSetId\":\"GCID-650abfb01ece-af1b-cb84-603f-421bda56\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective6\"},{\"questionSetId\":\"GCID-c77cfcf0ddc4-1f58-eb84-050a-30550ab8\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective5\"},{\"questionSetId\":\"GCID-185a35df618e-861a-eb54-bdb4-c2b2c998\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective4\"},{\"questionSetId\":\"GCID-e4980af85738-82ab-16a4-a04b-f1ed02ab\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective3\"},{\"questionSetId\":\"GCID-df1297bbd34c-582b-da54-f9b0-9215d7e3\",\"questionCount\":\"0\",\"objectiveEntry\":\"Objective2\"}]"
+                    },
+                    {
+                        "id": "a95b54c7-3fd1-4470-94fc-4ea4bd95912a",
+                        "name": "useScrambling",
+                        "value": "false"
+                    },
+                    {
+                        "id": "1f7dc49d-949c-4bcf-8428-0adec2c9c69b",
+                        "name": "hasAvailabilityLimits",
+                        "value": "false"
+                    },
+                    {
+                        "id": "b0055a26-b4d2-4c89-9690-41aa7cd6706f",
+                        "name": "startDateAvailableEpochUTC_OFFSET",
+                        "value": "259200000"
+                    },
+                    {
+                        "id": "1ddf04fd-e9e8-432a-a907-537a8c1a0886",
+                        "name": "endDateAvailableEpochUTC_OFFSET",
+                        "value": "864000000"
+                    },
+                    {
+                        "id": "ef97b519-6757-46d2-94e2-a50757428eb5",
+                        "name": "useTimeLimit",
+                        "value": "true"
+                    },
+                    {
+                        "id": "a94784bc-53a8-4c16-9726-f3bf50e22c98",
+                        "name": "timeLimitMinutes",
+                        "value": "60"
+                    },
+                    {
+                        "id": "11b2a38c-5fca-4a8d-94b0-7a3ccefe0665",
+                        "name": "limitNumberStudentAttempts",
+                        "value": "true"
+                    },
+                    {
+                        "id": "6e99a108-fe4e-4b88-b2c6-d1015ddce1df",
+                        "name": "numberStudentAttempts",
+                        "value": "3"
+                    },
+                    {
+                        "id": "212fff25-f1a2-4810-97c3-3739402d0d00",
+                        "name": "allowStudentsToCheckResponses",
+                        "value": "false"
+                    },
+                    {
+                        "id": "4e6a749d-0cc5-47aa-9c1c-8a1cc50abf56",
+                        "name": "adaSupported",
+                        "value": "false"
+                    },
+                    {
+                        "id": "1e2a03a6-bf32-4a7c-93f7-976532d4dce4",
+                        "name": "adaTimeLimitInMinutes",
+                        "value": "0"
+                    },
+                    {
+                        "id": "1c9c2c0c-021f-4220-9462-6e5fa07b0eb2",
+                        "name": "numberChecksPerQuestion",
+                        "value": "3"
+                    },
+                    {
+                        "id": "0a3f1466-9402-4a4b-b7d5-817b9cbf49db",
+                        "name": "showCorrectAnswerOnLastCheck",
+                        "value": "true"
+                    },
+                    {
+                        "id": "f66782b1-1a27-4f99-a57c-aef9025cc902",
+                        "name": "assignmentType",
+                        "value": "Quiz"
+                    },
+                    {
+                        "id": "c646e550-a5da-4ec5-89bf-c5f3f5d7b91e",
+                        "name": "activity_id",
+                        "value": "031030f4-8b93-4d93-9565-85a5ddf513ae"
+                    },
+                    {
+                        "id": "1a9cec47-5c9c-400b-8ccd-96bc23721b75",
+                        "name": "course_offering_id",
+                        "value": "#courseofferingid#"
+                    },
+                    {
+                        "id": "88ae7371-341d-42a9-a4d9-27412ece27ee",
+                        "name": "course_name",
+                        "value": "Elementary Methods: Mathematics"
+                    },
+                    {
+                        "id": "b0e0b81d-d509-443f-8151-b3e66943e4cd",
+                        "name": "assignmentId",
+                        "value": "<<assignmentId>>"
+                    },
+                    {
+                        "id": "dd3311f8-8345-495e-adf0-fbdb77474b80",
+                        "name": "cdgVersionId",
+                        "value": "CUR/600_1414162087210"
+                    },
+                    {
+                        "id": "ab65dea2-a1d4-4b68-8923-fa481182b2a6",
+                        "name": "courseCode",
+                        "value": "CUR/600"
+                    }
+                ]
+            },
+            "instanceInfo": [
+                {
+                    "id": "635fd83b-f13a-46a7-a8bb-eb2d53c37c64",
+                    "contextName": "CUR/600_1414162087210",
+                    "contextType": "CDG_DRAFT",
+                    "order": "1",
+                    "value": [
+                        {
+                            "id": "c78f0d3f-a1c1-43c8-8e60-f1681d742030",
+                            "name": "resolverUrl",
+                            "value": "/ResourceResolver/3/urn:apol:tenantId:831D8B107020BBEBE0400F0A32207789/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/resolve"
+                        },
+                        {
+                            "id": "63e12a67-ee4a-4ac6-8690-cfa15c6f28a9",
+                            "name": "errorMessage",
+                            "value": "{\"error\":[{\"resource\":\"Assessments\",\"description\":{\"value\":\"Invalid QuestionSetId - QuestionSet with Id : GCID-9bcd6515ec57-7aba-7004-7dc5-89eec717 does not exist. \\nInvalid QuestionSetId - QuestionSet with Id : GCID-e7baae77a3cd-dbaa-3c44-61b3-024fb267 does not exist. \\nInvalid QuestionSetId - QuestionSet with Id : GCID-cafa94301ca8-275a-31f4-abab-bda893e1 does not exist. \\nInvalid QuestionSetId - QuestionSet with Id : GCID-0fa66efba3ba-fe7a-a974-a5d8-e621f752 does not exist. \\nInvalid QuestionSetId - QuestionSet with Id : GCID-650abfb01ece-af1b-cb84-603f-421bda56 does not exist. \\nInvalid QuestionSetId - QuestionSet with Id : GCID-c77cfcf0ddc4-1f58-eb84-050a-30550ab8 does not exist. \\nInvalid QuestionSetId - QuestionSet with Id : GCID-185a35df618e-861a-eb54-bdb4-c2b2c998 does not exist. \\nInvalid QuestionSetId - QuestionSet with Id : GCID-e4980af85738-82ab-16a4-a04b-f1ed02ab does not exist. \\nInvalid QuestionSetId - QuestionSet with Id : GCID-df1297bbd34c-582b-da54-f9b0-9215d7e3 does not exist. \\n\"},\"code\":\"7535\"}]}"
+                        },
+                        {
+                            "id": "6e2b33a7-d858-4a8e-9f7d-566767daff53",
+                            "name": "errorCategory",
+                            "value": "data"
+                        },
+                        {
+                            "id": "ec446512-df33-47cb-ae64-47d01334eed4",
+                            "name": "causedBy",
+                            "value": "org.springframework.web.client.HttpClientErrorException: 400 Bad Request at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:75) at org.springframework.web.client.RestTemplate.handleResponseError(RestTemplate.java:486) at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:443) at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:415) at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:320) at edu.apollogrp.lp.provisioning.repository.wsclients.AssessmentWebServiceClient.postToAssessment(AssessmentWebServiceClient.java:393) at edu.apollogrp.lp.provisioning.repository.impl.AssessmentProvisioning.createAssessment(AssessmentProvisioning.java:771) at edu.apollogrp.lp.provisioning.repository.impl.AssessmentProvisioning.callAssessmentByLearningActivity(AssessmentProvisioning.java:208) at edu.apollogrp.lp.provisioning.repository.impl.AssessmentProvisioning.provisionLearningActivity(AssessmentProvisioning.java:78)"
+                        },
+                        {
+                            "id": "d3367fc5-1209-434d-a1d2-3d25225aea79",
+                            "name": "errorCode",
+                            "value": "http:400"
+                        }
+                    ]
+                }
+            ]
+        },
+        "basicLTIProviderInfo": {
+            "id": "e2acb555-23a6-4288-94d5-0e308c096def",
+            "basicLTIProviderPath": "${BLTI_PROVIDER}"
+        }
+    },
+    "activityInfo": [
+        {
+            "id": "ef251087-ce81-47f7-8c18-769aeee49e22",
+            "objectType": "ActivityInfo",
+            "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:activityInfo:ef251087-ce81-47f7-8c18-769aeee49e22",
+            "name": "FriendlyName",
+            "value": "Quiz"
+        },
+        {
+            "id": "e2e36d9f-2b9d-446b-886d-8831fcc01526",
+            "objectType": "ActivityInfo",
+            "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:activityInfo:e2e36d9f-2b9d-446b-886d-8831fcc01526",
+            "name": "ToolStyle",
+            "value": "quiz-icon"
+        },
+        {
+            "id": "c6d44abc-1909-47fe-a684-ce7627910fd8",
+            "objectType": "ActivityInfo",
+            "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:activityInfo:c6d44abc-1909-47fe-a684-ce7627910fd8",
+            "name": "Height",
+            "value": "100%"
+        },
+        {
+            "id": "f340408a-983b-41ec-a4f4-77cef0243ccc",
+            "objectType": "ActivityInfo",
+            "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:activityInfo:f340408a-983b-41ec-a4f4-77cef0243ccc",
+            "name": "Width",
+            "value": "100%"
+        },
+        {
+            "id": "58b543f5-6381-4755-98ab-33502f2d6561",
+            "objectType": "ActivityInfo",
+            "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:activityInfo:58b543f5-6381-4755-98ab-33502f2d6561",
+            "name": "AllowComments",
+            "value": "true"
+        },
+        {
+            "id": "482ac3d5-f928-459f-81f0-fcea6397d02c",
+            "objectType": "ActivityInfo",
+            "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:activityInfo:482ac3d5-f928-459f-81f0-fcea6397d02c",
+            "name": "CanResize",
+            "value": "true"
+        },
+        {
+            "id": "7e6bfa10-9db1-48c5-ba69-b4abd1e48c82",
+            "objectType": "ActivityInfo",
+            "path": "/urn:apol:IDDProfileId:globalprofileidforidd/urn:apol:cdgDraftActivityId:9a07c9f5-0737-44c6-9cad-a3a153bc84f4/urn:apol:courseCode:CUR%2F600/draft/urn:apol:activityInfo:7e6bfa10-9db1-48c5-ba69-b4abd1e48c82",
+            "name": "CanExpand",
+            "value": "true"
+        }
+    ],
+    "objectives": [],
+    "prerequisites": [],
+    "extensionInfo": []
+}

@@ -2,9 +2,14 @@ package core.api;
 
 import static com.jayway.restassured.RestAssured.given;
 
+
+
+
+import java.io.File;
 import java.util.Map;
 
 import com.jayway.restassured.response.Response;
+import com.jayway.restassured.specification.MultiPartSpecification;
 
 
 
@@ -39,6 +44,35 @@ public class HttpCore {
 				
 		return response;		
     }
+	
+	public Response multiPartPostSimpleFile(String uri, File file, Map<String, ?> queryparams, Map<String, ?> headers, boolean logAll)  {
+		Response response = 			
+				given().
+				        multiPart(file).
+						log().all(logAll).
+						queryParams(queryparams).				
+			    		headers(headers).	    		
+			    when().
+			    		post(uri);
+		
+				
+		return response;
+	}
+	
+	public Response multiPartPostSimpleFile(String uri, MultiPartSpecification multiPartspec, Map<String, ?> queryparams, Map<String, ?> headers, boolean logAll)  {
+		Response response = 			
+				given().
+				        multiPart(multiPartspec).
+						log().all(logAll).
+						queryParams(queryparams).				
+			    		headers(headers).	    		
+			    when().
+			    		post(uri);
+		
+				
+		return response;
+	}
+
 	
 	/**
 	 * This is the core http delete to delete a resource
@@ -81,6 +115,8 @@ public class HttpCore {
 				
 		return response;
 	}
+	
+	
 	
 	/**
 	 * This is the core http post to put a resource using post method

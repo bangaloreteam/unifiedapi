@@ -3,6 +3,7 @@ package onedrive.tests;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -12,7 +13,9 @@ import javax.ws.rs.core.MediaType;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.testng.annotations.Test;
 
+import com.jayway.restassured.internal.MultiPartSpecificationImpl;
 import com.jayway.restassured.response.Response;
+import com.jayway.restassured.specification.MultiPartSpecification;
 import com.sun.jersey.api.client.ClientResponse;
 
 import onedrive.api.OneDrive;
@@ -151,6 +154,65 @@ public class OneDriveTests {
 		System.out.println("Size of my folder children:" + folderChildren.getValue().length);		
 		System.out.println("Folder contents:" + new ObjectMapper().writeValueAsString(folderChildren));	
 	}
+	
+	 public MultiPartSpecification build() {
+	        MultiPartSpecificationImpl spec = new MultiPartSpecificationImpl();
+	        spec.setCharset("UTF-8");
+	        spec.setContent(new java.io.File(System.getProperty("user.dir") + "\\src\\test\\resources\\Sample.txt"));
+	        spec.setControlName("file");
+	        spec.setFileName("test1.txt");
+	        spec.setMimeType("application/octet-stream");
+	        return spec;
+	    }
+	
+	@Test
+	public void uploadFileUsingMultiPart() throws Exception {	
+				
+		headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+		headers.put(HttpHeaders.CONTENT_TYPE, "multipart/form-data");
+		headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+		headers.put(HttpHeaders.ACCEPT_CHARSET, "UTF-8");
+		headers.put("boundary", Long.toString(new Date().getTime()));
+
+		//Filter the id, name,size from the item resource
+		queryParams.put("select", "id,name,size");
+		Children children = oneDriveAPI.getRootChildren(OneDrive.API_PATH_DRIVE_ROOT_CHILDREN, queryParams, headers, false);
+		String myFolderId = null;
+
+		for (Item item : children.getValue()) {			
+			if(item.getName().equals("MyFolder")) {
+				myFolderId = item.getId();
+			}
+		}
+	
+		//Upload the file into my folder
+		
+		java.io.File oneDriveTestfile = new java.io.File(System.getProperty("user.dir") + "\\src\\test\\resources\\Sample.txt");
+		queryParams.clear();
+		//Specify the behavior to use if the file already exists. You can use the values fail, replace, or rename. The default for PUT is replace.
+		queryParams.put("@name.conflictBehavior", "rename");
+
+		if (myFolderId != null) {
+			String uri = OneDrive.API_PATH_SIMPLE_UPLOAD_BY_CHILDREN_PATH.replace("{parent-id}", myFolderId)
+																		 .replace("{filename}", oneDriveTestfile.getName());
+			
+			MultiPartSpecification multiPartSpecification= build();
+			
+			
+			Response response = oneDriveAPI.uploadFileUsingMultiPart(uri, multiPartSpecification, queryParams, headers, true);
+
+			System.out.println("response code:" + response.getStatusCode());	
+		}
+		
+		//After upload get the list of items in MyFolder
+		String uri = OneDrive.API_PATH_GET_CHILDRENS_BY_ITEMID.replace("{item-id}", myFolderId);
+		Children folderChildren = oneDriveAPI.getChildrenByItemId(uri, queryParams, headers, true);
+
+		System.out.println("Get children by item id uri:" + uri);
+		System.out.println("Size of my folder children:" + folderChildren.getValue().length);		
+		System.out.println("Folder contents:" + new ObjectMapper().writeValueAsString(folderChildren));	
+	}
+
 	
 	//Utility method need to be moved to util package.
 	private static byte[] fileToByteArray(java.io.File file) {

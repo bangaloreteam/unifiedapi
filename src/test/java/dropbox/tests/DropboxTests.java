@@ -1,3 +1,4 @@
+
 package dropbox.tests;
 
 import java.io.FileInputStream;
@@ -5,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.Date;
 
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
@@ -12,7 +14,10 @@ import javax.ws.rs.core.MediaType;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
+import com.jayway.restassured.builder.MultiPartSpecBuilder;
+import com.jayway.restassured.internal.MultiPartSpecificationImpl;
 import com.jayway.restassured.response.Response;
+import com.jayway.restassured.specification.MultiPartSpecification;
 
 import dropbox.api.DropboxApi;
 import dropbox.api.DropboxConstants;
@@ -57,6 +62,7 @@ public class DropboxTests {
 			queryParams.put("access_token", dropboxAccessToken);
 			HashMap<String, String> headers =new HashMap<String,  String>();
 			headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+			
 			//invoke the httpcore post api
 			Response response = dropboxApi.doPut(DropboxConstants.API_DROPBOX_UPLOAD_FILE.replace("<path>", testFile.getName()),
 					fileToByteArray(testFile),
@@ -66,6 +72,65 @@ public class DropboxTests {
 		   System.out.println("statusCode"+response.getStatusCode());
 		
 	  }
+	  @Test
+	  public void uploadFileUsingMultipart() throws Exception
+	  {
+		  testFile= new java.io.File(System.getProperty("user.dir") + "\\src\\test\\resources\\test1.txt");
+		  String fileName=testFile.getName();
+		  HashMap<String, String> queryParams=new HashMap<String,  String>();
+			queryParams.put("access_token", dropboxAccessToken);
+			HashMap<String, String> headers =new HashMap<String,  String>();
+			headers.put(HttpHeaders.CONTENT_TYPE, "multipart/form-data");
+			headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+			headers.put(HttpHeaders.ACCEPT_CHARSET, "UTF-8");
+			headers.put("boundary", Long.toString(new Date().getTime()));
+			
+			//invoke the httpcore post api
+			Response response = dropboxApi.multiPartPostSimpleFile(DropboxConstants.API_DROPBOX_UPLOAD_FILE.replace("<path>", fileName),
+					testFile,
+					queryParams,
+					headers, true); 
+			System.out.println("status code.."+response.getStatusCode()+"..."+response.getStatusLine());
+			
+	  }
+	  
+	  
+	   public MultiPartSpecification build() {
+	        MultiPartSpecificationImpl spec = new MultiPartSpecificationImpl();
+	        spec.setCharset("UTF-8");
+	        spec.setContent(new java.io.File(System.getProperty("user.dir") + "\\src\\test\\resources\\test1.txt"));
+	        spec.setControlName("file");
+	        spec.setFileName("test1.txt");
+	        spec.setMimeType("application/octet-stream");
+	        return spec;
+	    }
+	   
+	  @Test
+	  public void uploadFileUsingMultipartSpicification() throws Exception
+	  {
+		  testFile= new java.io.File(System.getProperty("user.dir") + "\\src\\test\\resources\\test1.txt");
+		  String fileName=testFile.getName();
+		  HashMap<String, String> queryParams=new HashMap<String,  String>();
+			queryParams.put("access_token", dropboxAccessToken);
+			HashMap<String, String> headers =new HashMap<String,  String>();
+			headers.put(HttpHeaders.CONTENT_TYPE, "multipart/form-data");
+			headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
+			headers.put(HttpHeaders.ACCEPT_CHARSET, "UTF-8");
+			headers.put("boundary", Long.toString(new Date().getTime()));
+			
+			//MultiPartSpecBuilder builder= new MultiP
+			
+			MultiPartSpecification multiPartSpecification= build();
+			
+			//invoke the httpcore post api
+			Response response = dropboxApi.multiPartPostSimpleFile(DropboxConstants.API_DROPBOX_UPLOAD_FILE.replace("<path>", fileName),
+					multiPartSpecification,
+					queryParams,
+					headers, true); 
+			System.out.println("status code.."+response.getStatusCode()+"..."+response.getStatusLine());
+			
+	  }
+	
 	
 	  public void downloadFile() throws Exception{
 	
@@ -162,6 +227,12 @@ public class DropboxTests {
 				String folder=response.asString();
 				System.out.println("Folder Details:" + folder);
 	
+	  }
+	  @Test
+	  public void testMultipartFileUpload() throws Exception
+	  {
+		  
+
 	  }
 	  public void fileCopyReference() throws Exception
 	  {
