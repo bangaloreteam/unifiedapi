@@ -21,6 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.jayway.restassured.response.Response;
+import com.jayway.restassured.specification.MultiPartSpecification;
 
 import core.api.HttpCore;
 
@@ -169,6 +170,22 @@ public class OneDriveAPI extends HttpCore implements OneDrive {
 		
 		//invoke the httpcore post api
 		Response response = this.doGet(uri, queryparams, headers, logRequestResponse); 	
+
+		if (response.getStatusCode() != HttpStatus.SC_MOVED_TEMPORARILY) throw new Exception(response.asString());
+		
+		return response;	
+		//API_PATH_DOWNLOAD_BY_ITEM_ID
+	}
+	
+  public Response uploadFileUsingMultiPart(String uri,  MultiPartSpecification multiPartspec,Map<String, String> queryparams, Map<String, String> headers, boolean logRequestResponse) throws Exception {
+		
+		//Add the Auth token to the query params
+		//queryparams.put(OneDriveConstants.API_PARAM_ACCESS_TOKEN, tokenProduce.getoAuth20Token().getAccess_token());
+		
+		headers.put("Authorization", "bearer "+ tokenProduce.getoAuth20Token().getAccess_token());
+		
+		//invoke the httpcore post api
+		Response response = this.multiPartPostSimpleFile(uri, multiPartspec, queryparams, headers, logRequestResponse); 	
 
 		if (response.getStatusCode() != HttpStatus.SC_MOVED_TEMPORARILY) throw new Exception(response.asString());
 		
