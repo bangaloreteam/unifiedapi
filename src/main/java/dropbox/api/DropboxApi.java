@@ -21,6 +21,11 @@ public class DropboxApi extends HttpCore {
 		super(DropboxConstants.DROPBOX_API_CONTENT_ROOT);
 		logger.info("Initializing One Drive API ....");
 	}	
+	public DropboxApi(String dropBoxApiOtherUrl)
+	{
+		super(dropBoxApiOtherUrl);
+	}
+	
 	
 	
 	@Override
