@@ -18,7 +18,7 @@ public class DropboxApi extends HttpCore {
 			LoggerFactory.getLogger(Thread.currentThread().getStackTrace()[1].getClassName());
 			
 	public DropboxApi() {
-		super(DropboxConstants.DROPBOX_API_CONTENT_ROOT);
+		super(DropboxService.DROPBOX_API_CONTENT_ROOT);
 		logger.info("Initializing One Drive API ....");
 	}	
 	public DropboxApi(String dropBoxApiOtherUrl)
