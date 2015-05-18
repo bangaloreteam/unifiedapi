@@ -1,6 +1,7 @@
 package dropbox.tests;
 
 import java.io.FileInputStream;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Date;
@@ -261,7 +262,7 @@ public void deleteFolderDrobBox(DropboxService service, String file)
 			headers.put("boundary", Long.toString(new Date().getTime()));
 			
 			//invoke the httpcore post api
-			Response response = dropboxApi.multiPartPostSimpleFile(DropboxConstants.API_DROPBOX_UPLOAD_FILE.replace("<path>", fileName),
+			Response response = dropboxApi.multiPartPostSimpleFile(service.API_DROPBOX_UPLOAD_FILE.replace("<path>", fileName),
 					testFile,
 					queryParams,
 					headers, true); 
@@ -285,7 +286,7 @@ public void deleteFolderDrobBox(DropboxService service, String file)
 			MultiPartSpecification multiPartSpecification= build();
 			
 			//invoke the httpcore post api
-			Response response = dropboxApi.multiPartPostSimpleFile(DropboxConstants.API_DROPBOX_UPLOAD_FILE.replace("<path>", fileName),
+			Response response = dropboxApi.multiPartPostSimpleFile(service.API_DROPBOX_UPLOAD_FILE.replace("<path>", fileName),
 					multiPartSpecification,
 					queryParams,
 					headers, true); 
@@ -557,7 +558,7 @@ public void deleteFolderDrobBox(DropboxService service, String file)
 			HashMap<String, String> headers =new HashMap<String,  String>();
 			headers.put(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
 			
-			Response response = dropboxApiUrl.doGet(DropboxConstants.API_DROPBOX_METADATA.replace("<path>", "gitbackup.txt"),  
+			Response response = dropboxApiUrl.doGet(service.API_DROPBOX_METADATA.replace("<path>", "gitbackup.txt"),  
 					queryParams,
 					headers, true); 
 		out.println("response for meta data:"+response.asString());
