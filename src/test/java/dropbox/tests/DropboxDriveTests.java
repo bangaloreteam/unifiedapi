@@ -20,7 +20,7 @@ import com.jayway.restassured.specification.MultiPartSpecification;
 
 import core.api.ServiceAccessToken;
 import dropbox.api.DropboxApi;
-import dropbox.api.DropboxConstants;
+
 import dropbox.api.DropboxService;
 import dropbox.dto.DropboxFile;
 import dropbox.dto.DropboxFolderError;
